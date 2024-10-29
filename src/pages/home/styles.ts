@@ -72,7 +72,6 @@ export const Container = styled.div`
 
 .chat-messages {
   flex: 1;
-  background-image: url('./assets/zap-bg.png');
   display: flex;
   flex-direction: column;
   justify-content: space-between;

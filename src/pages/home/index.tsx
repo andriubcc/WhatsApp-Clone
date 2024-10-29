@@ -28,7 +28,8 @@ function Home() {
   const navigate = useNavigate();
 
   const image = require('../../assets/profissao-programador-logo.jpg');
-  const sendicon = require('../../assets/send.png')
+  const sendicon = require('../../assets/send.png');
+  const wallpaper = require('../../assets/zap-bg.png');
 
   useEffect(() => {
     io.on("users", (users) => setUsers(users));
@@ -103,12 +104,12 @@ function Home() {
       <div className='back-ground'></div>
       <div className='chat-container'>
 
-        <div className='chat-contacts' style={{border: 'solid 1px red'}}>
+        <div className='chat-contacts'>
           <div className='chat-options'></div>
               {rooms.map((room: IProps, index) => (
                 <>
           <div key={index} className={`chat-item ${room === activeRoom ? 'active' : ''}`} onClick={() => switchRoom(room)}>
-            <img  className='image-profile' alt='' />
+            <img src={image} className='image-profile' alt='' />
                 <div className='title-chat-container' >
                 <span className='title-message'>{roomName}</span>
                 <span className='last-message'>
@@ -120,7 +121,7 @@ function Home() {
               ))}
         </div>
 
-        <div className='chat-messages'>
+        <div style={{backgroundImage: `url(${wallpaper})`}} className='chat-messages'>
           <div className='chat-options'>
           <div className='chat-item'>
               <img  src={image} className='image-profile' alt='' />
