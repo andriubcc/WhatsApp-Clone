@@ -7,11 +7,8 @@ const io = socket('http://localhost:4000');
 
 function CreateRoom() {
     const [ roomName, setRoomName] = useState('');
-    const [ rooms, setRooms] = useState('');
 
     const handleJoin = () => {
-        console.log(name, rooms)
-    
         if(roomName) {
           io.emit("join", roomName);
         }
